@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="bootstrap.css">
+<link rel="stylesheet" href="main.css">
+
+
+<body>
+    <section x-data="toggleSidebar">
+
+
+        <section x-clock class="sidebar" :class="open || 'inactive'">
+            <div class="d-flex justify-content-between align-items-center justify-content-lg-center">
+                <h4 class="fw-bold pt-2">webprog.in</h4>
+                <img @click="toggle" style="width: 35 px; height: 35px;"
+                    src="./bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/x.svg" class="pt-2" alt="">
+
+            </div>
+
+            <div class="mt-4">
+                <ul class="list-unstyled">
+
+                    <li class="sidebar-item active">
+                        <a href="" class="sidebar-link">
+                            <img class="ms-2" src="./bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/grid-fill.svg"
+                                alt="">
+                            <span>داشبورد</span>
+                        </a>
+                    </li>
+
+                    <li x-data="dropdown" class="sidebar-item">
+                        <div @click="toggle " class="sidebar-link">
+                            <img class="ms-2" src="./bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/shop.svg" alt="">
+                            <span> فروشگاه</span>
+                            <img class="me-auto" src="bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/chevron-down.svg"
+                                alt="">
+                        </div>
+                        <ul x-show="open" x-transition class="submenu">
+                            <li class="submenu-item">
+                                <a href="">
+                                    لیست فروشگاه
+                                </a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="">
+                                    ویرایش فروشگاه
+                                </a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="">
+                                    ایجاد فروشگاه
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li x-data="dropdown" class="sidebar-item">
+                        <div @click="toggle " class="sidebar-link">
+                            <img class="ms-2" src="./bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/box-seam.svg "
+                                alt="">
+                            <span> محصولات</span>
+                            <img class="me-auto" src="bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/chevron-down.svg"
+                                alt="">
+                        </div>
+                        <ul x-show="open" x-transition class="submenu">
+                            <li class="submenu-item">
+                                <a href="">
+                                    لیست محصولات
+                                </a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="">
+                                    ویرایش محصولات
+                                </a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="">
+                                    لیست محصولات
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li x-data="dropdown" class="sidebar-item">
+                        <div @click="toggle " class="sidebar-link">
+                            <img class="ms-2" src="./bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/basket-fill.svg"
+                                alt="">
+                            <span> فروشات</span>
+                            <img class="me-auto" src="bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/chevron-down.svg"
+                                alt="">
+                        </div>
+                        <ul x-show="open" x-transition class="submenu">
+                            <li class="submenu-item">
+                                <a href="">
+                                    ایجاد فروشات
+                                </a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="">
+                                    ویرایش فروشات
+                                </a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="">
+                                    لیست فروشات
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a href="" class="sidebar-link">
+                            <img class="ms-2" src="./bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/percent.svg" alt="">
+                            <span>تخفیف ها</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a href="" class="sidebar-link">
+                            <img class="ms-2" src="./bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/chat-right-fill.svg"
+                                alt="">
+                            <span>تکت ها</span>
+                        </a>
+                    </li>
+
+                    <li x-data="dropdown" class="sidebar-item">
+                        <div @click="toggle " class="sidebar-link">
+                            <img class="ms-2" src="./bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/people-fill.svg "
+                                alt="">
+                            <span> کاربران</span>
+                            <img class="me-auto" src="bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/chevron-down.svg"
+                                alt="">
+                        </div>
+                        <ul x-show="open" x-transition class="submenu">
+                            <li class="submenu-item">
+                                <a href="">
+                                    لیست کاربران
+                                </a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="">
+                                    ویرایش کاربران
+                                </a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="">
+                                    ایجاد کاربران
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li x-data="dropdown" class="sidebar-item">
+                        <div @click="toggle " class="sidebar-link">
+                            <img class="ms-2" src="./bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/chat-dots-fill.svg"
+                                alt="">
+                            <span> کامنت</span>
+                            <img class="me-auto" src="bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/chevron-down.svg"
+                                alt="">
+                        </div>
+                        <ul x-show="open" x-transition class="submenu">
+                            <li class="submenu-item">
+                                <a href="">
+                                    لیست کامنت ها
+                                </a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="">
+                                    ویرایش کامنت ها
+                                </a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="">
+                                    ایجاد کامنت ها
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+        <section class="main" :class="open || 'active'">
+
+            <header class=" header d-flex justify-content-between p-3 align-items-center">
+                <div>
+                    <img @click="toggle" src="./bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/justify.svg" alt="">
+
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <div class="dropdown">
+                        <div class="dropdown-toggle" data-bs-toggle="dropdown">
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                9
+                            </span>
+                            <img class="mb-2" src="./bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/envelope.svg" alt="">
+                        </div>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">لورم ایپسوم</a></li>
+                            <li><a class="dropdown-item" href="#">لورم ایپسوم ساختگی</a></li>
+                            <li><a class="dropdown-item" href="#">لورم ایپسوم ساختگی متن</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown pe-3">
+                        <div class="dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="mb-2" src="./bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/bell.svg" alt="">
+                        </div>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">لورم ایپسوم</a></li>
+                            <li><a class="dropdown-item" href="#">لورم ایپسوم ساختگی</a></li>
+                            <li><a class="dropdown-item" href="#">لورم ایپسوم ساختگی متن</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown pe-3 profile">
+                        <div class="dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
+                            <img src="./images/7.jpg" alt="" class="img-fluid rounded-circle ms-2" style="width: 45px;">
+                            <div>
+                                <h6 class="fw-bold mb-0 fs-6">علی شیخ</h6>
+                                <p class=" mb-0 ">سوپرادمین</p>
+                            </div>
+                        </div>
+                        <ul class="dropdown-menu text-end" aria-labelledby="dropdown-menuButton1">
+
+                            <li>
+                                <a href="" class="dropdown-item">
+
+                                    <img src="bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/person.svg" alt="">
+                                    پروفایایل
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="dropdown-item">
+                                    <img src="bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/gear.svg" alt="">
+                                    تنظیمات
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="dropdown-item">
+                                    <img src="bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/wallet.svg" alt="">
+                                    حساب کاربری
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-devider">
+                            </li>
+                            <li>
+                                <a href="" class="dropdown-item">
+                                    <img src="bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/box-arrow-left.svg" alt="">
+                                    خروج
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </header>
+
+
+
+
+            <div class="content p-2 p-lg-4">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <nav aria-label="breadcrumb">
+                            <lo class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">داشبورد</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">لیست محصولات</li>
+                                </ol>
+                        </nav>
+                    </div>
+
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-header text-start">
+                                <button class="btn btn-light-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                                    <img src="./bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/funnel-fill.svg" alt="">
+                                    فیلتر
+                                </button>
+                            </div>
+
+
+                            <div class="card-body">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+        Open modal
+    </button>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <form action="">
+                    <div class="modal-header">
+                        <h4 class="modal-title">فیلتر محصولات</h4>
+                        <button type="button" class="btn-close text-start" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+
+                        <div class="mb-3">
+                            <label for="" class="form-lable">نام محصول</label>
+                            <input type="text" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-lable">وضعت محصول</label>
+                            <select class="form-select">
+                                <option value="1">تایید شده</option>
+                                <option value="2">تایید نشده</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">کنسل</button>
+                        <button type="button" class="btn btn-light-primary">فیلتر</button>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="bootstrap.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        new PureCounter();
+    </script>
+
+    <script src="carts/alpineComponnet.js">
+
+    </script>
+
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+    <!-- Chart code -->
+
+    <script src="carts/cart1.js"></script>
+
+    <script src="carts/char2.js"></script>
+
+
+
+</body>
+
+</html>

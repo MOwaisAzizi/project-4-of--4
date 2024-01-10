@@ -1,0 +1,155 @@
+@font-face {
+    font-family: "vazir";
+    src: url(./fonts/Vazir.eot);
+
+    src: url("./fonts/Vazir.eot?#iefix") format("embeddded-opentype"),
+        url("./fonts/Vazir.woff2") format("woff2"),
+        url("./fonts/Vazir.woff") format("woff"),
+        url("./fonts/Vazir.ttf") format("truetype"),
+}
+
+body {
+    font-family: "vazir" !important;
+}
+
+/* scroll */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb :hover {
+    background-color: #555;
+
+}
+
+
+.sidebar {
+    width: 250px;
+    position: fixed;
+    height: 100vh;
+    background-color: white;
+    transition: all 0.5s;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.sidebar:hover {
+    overflow: auto;
+}
+
+.sidebar.inactive {
+    margin-right: -250px;
+}
+
+.sidebar .sidebar-item {}
+
+.sidebar .sidebar-item .sidebar-link {
+    text-decoration: none;
+    color: #25396f;
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    transition: 0.5s;
+
+
+}
+
+.sidebar .sidebar-item .sidebar-link:hover {
+    background-color: #f0f1f5;
+}
+
+.sidebar .sidebar-item.active .sidebar-link {
+    background-color: #f0f1f5;
+    background-color: rgb(84, 84, 227);
+    color: white;
+}
+
+.sidebar .submenu {
+    list-style: none;
+}
+
+.submenu .submenu-item a {
+    padding: 0.8rem;
+    text-decoration: none;
+    color: #25396f;
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.submenu .submenu-item :hover {
+    margin-right: 0.3rem;
+}
+
+.sidebar .sidebar-item .sidebar-link {
+    cursor: pointer;
+}
+
+
+.main {
+    background-color: #f2f7ff;
+
+    transition: all 0.5s;
+}
+
+.main .header .profile ::after {
+    display: none;
+}
+
+.main.active {
+    margin-right: 0;
+}
+
+.card {
+    border: none !important;
+    border-radius: 0.7r em;
+
+}
+
+.card-header {
+    background-color: white;
+    border-bottom: none;
+    padding: 1rem;
+}
+
+.main .content .stats-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    background-color: #9694ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-light-primary {
+    background-color: #ebf3ff;
+}
+
+
+@media(min-width: 992px) {
+    .main {
+        margin-right: 250px;
+        ;
+    }
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+/* [x-clock] {
+    display: none !important;
+} */
